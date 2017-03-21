@@ -22,7 +22,7 @@ public class Server {
     public void iniciar() {
     	try {
     		LocateRegistry.createRegistry(1099);	
-            TDAAlumno gestionAlumnos = new GestionAlumnos();
+            TDAAlumno gestionAlumnos = new GestionAlumno();
             Naming.rebind ("//localhost/GestionAlumnos", gestionAlumnos);
             System.out.println("Fijado en //localhost/GestionAlumnos");
 		} catch (Exception e) {

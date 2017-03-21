@@ -8,12 +8,12 @@ import bean.Alumno;
 import interfaz.TDAAlumno;
 
 
-public class GestionAlumnos extends UnicastRemoteObject implements TDAAlumno {
+public class GestionAlumno extends UnicastRemoteObject implements TDAAlumno {
 
 	private static final long serialVersionUID = 1L;
 	private Set<Alumno> alumnos;
 
-	public GestionAlumnos() throws RemoteException {
+	public GestionAlumno() throws RemoteException {
 		super();	
 		alumnos = new HashSet<Alumno>();
 		alumnos.add(new Alumno(1,"Juan","Activo"));

@@ -9,7 +9,6 @@ import bean.Profesor;
 import interfaz.TDAProfesor;
 
 public class GestionProfesor extends UnicastRemoteObject implements TDAProfesor{
-	private Set<Profesor> profesores;
 
 	protected GestionProfesor() throws RemoteException {
 		super();
