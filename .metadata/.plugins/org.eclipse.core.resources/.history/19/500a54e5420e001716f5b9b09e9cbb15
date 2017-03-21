@@ -1,0 +1,12 @@
+package negocio;
+import bean.*;
+
+public class Negocio {
+	
+	private Set<Materia> materias;
+	private Set<Profesor> profesores;
+	private Set<Direccion> direcciones;
+	private Set<Alumno> alumnos;
+	
+
+}
