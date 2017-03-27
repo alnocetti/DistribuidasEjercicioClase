@@ -10,16 +10,13 @@ import interfaz.TDAAlumno;
 
 public class GestionAlumno extends UnicastRemoteObject implements TDAAlumno {
 
+	public GestionAlumno() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private static final long serialVersionUID = 1L;
 	private Set<Alumno> alumnos;
-
-	public GestionAlumno() throws RemoteException {
-		super();	
-		alumnos = new HashSet<Alumno>();
-		alumnos.add(new Alumno(1,"Juan","Activo"));
-		alumnos.add(new Alumno(2,"Pedro","Activo"));
-		alumnos.add(new Alumno(4,"Maria","Activo"));
-	}
 
 	public void envioAlumno(Alumno alumno) throws RemoteException 
 	{
