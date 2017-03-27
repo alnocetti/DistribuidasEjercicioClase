@@ -8,20 +8,20 @@ public class Materia implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String numeroMateria;
+	private int numeroMateria;
 	private String nombreMateria;
 	
-	public Materia(String numeroMateria, String nombreMateria) {
+	public Materia(int numeroMateria, String nombreMateria) {
 		super();
 		this.numeroMateria = numeroMateria;
 		this.nombreMateria = nombreMateria;
 	}
 
-	public String getNumeroMateria() {
+	public int getNumeroMateria() {
 		return numeroMateria;
 	}
 
-	public void setNumeroMateria(String numeroMateria) {
+	public void setNumeroMateria(int numeroMateria) {
 		this.numeroMateria = numeroMateria;
 	}
 
