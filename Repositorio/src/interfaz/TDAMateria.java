@@ -16,4 +16,6 @@ public interface TDAMateria extends Remote{
 	
 	public int cantidadMaterias() throws RemoteException;
 	
+	public boolean existeMateria(int numero) throws RemoteException;
+	
 }
