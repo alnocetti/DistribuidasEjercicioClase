@@ -11,7 +11,7 @@ import interfaz.TDAAlumno;
 public class Cliente {
     
 	TDAAlumno manejoAlumnos;
-	Alumno alumno;
+	AlumnoDTO alumno;
 	
 	public static void main(String[] args)
 	{
@@ -38,19 +38,19 @@ public class Cliente {
     			System.out.println(alumno.getNombre());
     			/*Listo todos los alumnos*/
     			System.out.println("\nListo Todos los Alumnos");
-    			Set<Alumno> alumnos = manejoAlumnos.obtengoAlumnos();
-    			for(Iterator<Alumno> i=alumnos.iterator();i.hasNext();)
+    			Set<AlumnoDTO> alumnos = manejoAlumnos.obtengoAlumnos();
+    			for(Iterator<AlumnoDTO> i=alumnos.iterator();i.hasNext();)
     			{
     				System.out.println(i.next().toString());
     			}
     			/*Agrego un alumno*/
     			System.out.println("\nAgrego un alumno");
-    			alumno = new Alumno(11, "Claudio","Activo");
+    			alumno = new AlumnoDTO(11, "Claudio","Activo");
     			manejoAlumnos.envioAlumno(alumno);
     			/*Listo todos los alumnos con el agregado*/
     			System.out.println("\nListo Todos los Alumnos");
     			alumnos = manejoAlumnos.obtengoAlumnos();
-    			for(Iterator<Alumno> i=alumnos.iterator();i.hasNext();)
+    			for(Iterator<AlumnoDTO> i=alumnos.iterator();i.hasNext();)
     			{
     				System.out.println(i.next().toString());
     			}
