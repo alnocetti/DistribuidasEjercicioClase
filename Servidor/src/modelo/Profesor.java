@@ -76,6 +76,16 @@ public class Profesor {
 		return profesorDTO;
 	}
 	
+	public boolean tieneMAteriaProfesor(Materia materia){
+		if(this.materias.contains(materia))
+			return true;
+		return false;
+	}
+	
+	public void agregarMateria(Materia materia){
+		this.materias.add(materia);
+	}
+	
 	
 	
 

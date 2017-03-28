@@ -22,5 +22,7 @@ public interface TDAProfesor extends Remote{
 	public void eliminarMateriaProfesor(MateriaDTO materia, ProfesorDTO profesor) throws RemoteException;
 	
 	public boolean existeProfesor(int numero) throws RemoteException;
+	
+	public void asignarMateriaProfesor(MateriaDTO materiaDTO, ProfesorDTO profesorDTO) throws RemoteException;
  
 }

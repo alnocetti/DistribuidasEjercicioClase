@@ -21,6 +21,20 @@ public class ProfesorControlador {
 		profesores.add(fromDTO(profesorDTO));				
 	}
 	
+	public void asignarMateriaProfesor(MateriaDTO materiaDTO, ProfesorDTO profesorDTO){
+		Profesor profesor = fromDTO(profesorDTO);
+		for(Profesor aux : profesores){
+			if (aux.equals(profesor)){
+				Set<Materia>materiasProfesor = aux.getMaterias();
+				Materia materia = fromDTOaMateria(materiaDTO);
+				if (!materiasProfesor.contains(materia)){
+					profesor.agregarMateria(materia);
+				}
+			}	
+		}
+	}
+	
+	
 	public ProfesorDTO obtengoProfesor(int numero){
 		for (Profesor aux : this.profesores){
 			if(numero == aux.getNumeroProfesor())

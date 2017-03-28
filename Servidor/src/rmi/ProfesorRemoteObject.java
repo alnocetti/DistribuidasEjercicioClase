@@ -49,7 +49,7 @@ public class ProfesorRemoteObject extends UnicastRemoteObject implements TDAProf
 	}
 
 	@Override
-	public void eliminarMateriaProfesor(MateriaDTO materia, ProfesorDTO profesor) throws RemoteException {
+	public void eliminarMateriaProfesor(MateriaDTO materiaDTO, ProfesorDTO profesorDTO) throws RemoteException {
 		// TODO Auto-generated method stub
 		
 	}
@@ -57,6 +57,13 @@ public class ProfesorRemoteObject extends UnicastRemoteObject implements TDAProf
 	@Override
 	public boolean existeProfesor(int numero) {
 		return controlador.existeProfesor(numero);
+	}
+
+
+	@Override
+	public void asignarMateriaProfesor(MateriaDTO materiaDTO, ProfesorDTO profesorDTO) throws RemoteException {
+		controlador.asignarMateriaProfesor(materiaDTO, profesorDTO);		
+		
 	}
 
 }
