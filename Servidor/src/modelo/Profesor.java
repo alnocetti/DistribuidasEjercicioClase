@@ -23,6 +23,10 @@ public class Profesor {
 		this.direccion = direccion;
 	}
 
+	public Profesor() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getNumeroProfesor() {
 		return numeroProfesor;
 	}

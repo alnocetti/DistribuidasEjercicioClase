@@ -18,7 +18,6 @@ public class AlumnoDTO implements Serializable{
 	}
 	
 	public AlumnoDTO(){
-		
 	}
 	public int getNumeroAlumno() {
 		return numeroAlumno;
@@ -42,6 +41,17 @@ public class AlumnoDTO implements Serializable{
 	public String toString() {
 		return "Alumno [nombre=" + nombre + ", numeroAlumno=" + numeroAlumno
 				+ "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof AlumnoDTO){
+			AlumnoDTO aux = (AlumnoDTO)obj;	
+			if(this.getNumeroAlumno() == aux.getNumeroAlumno())
+				return true;
+		}
+		return false;
+	
 	}
 	
 	

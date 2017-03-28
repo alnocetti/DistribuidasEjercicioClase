@@ -7,51 +7,39 @@ import java.util.Set;
 
 import bean.MateriaDTO;
 import bean.ProfesorDTO;
+import controlador.ProfesorControlador;
 import interfaz.TDAProfesor;
 
 public class ProfesorRemoteObject extends UnicastRemoteObject implements TDAProfesor{
-	Set<ProfesorDTO> profesores;
 
+	ProfesorControlador controlador;
+	
+	private static final long serialVersionUID = 1L;
+	
 	public ProfesorRemoteObject() throws RemoteException {
 		super();
-		// TODO Auto-generated constructor stub
+		this.controlador = new ProfesorControlador();
 	}
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	@Override
 	public ProfesorDTO obtengoProfesor(int numero) throws RemoteException {
-		// TODO Auto-generated method stub
-		ProfesorDTO aux;
-		for(Iterator<ProfesorDTO> i = profesores.iterator();i.hasNext();){
-			aux = i.next();
-			if(aux.getNumeroProfesor() == numero){
-				return aux;
-			}
-			throw new RemoteException("No se encontró el profesor");
-		}
-		return null;
+		return controlador.obtengoProfesor(numero);
 	}
 
 	@Override
-	public void envioProfesor(ProfesorDTO profesor) throws RemoteException {
-		// TODO Auto-generated method stub
-		profesores.add(profesor);
+	public void agregarProfesor(ProfesorDTO profesor) throws RemoteException {
+		controlador.agregarProfesor(profesor);
 		
 	}
 
 	public Set<ProfesorDTO> obtengoProfesores() throws RemoteException {
-		// TODO Auto-generated method stub
-		return profesores;
+		return controlador.obtengoProfesores();
 	}
 
 	@Override
 	public int cantidadProfesores() throws RemoteException {
-		// TODO Auto-generated method stub
-		return profesores.size();
+		return controlador.cantidadProfesores();
 	}
 
 
@@ -68,14 +56,7 @@ public class ProfesorRemoteObject extends UnicastRemoteObject implements TDAProf
 
 	@Override
 	public boolean existeProfesor(int numero) {
-		ProfesorDTO aux;
-		for(Iterator<ProfesorDTO> i = profesores.iterator(); i.hasNext();){
-			aux = i.next();
-			if (aux.getNumeroProfesor() == numero){
-				return true;
-			}
-		}
-		return false;
+		return controlador.existeProfesor(numero);
 	}
 
 }

@@ -11,7 +11,7 @@ public interface TDAProfesor extends Remote{
 	
 	public ProfesorDTO obtengoProfesor(int numero) throws RemoteException;
 	
-	public void envioProfesor(ProfesorDTO profesor) throws RemoteException;
+	public void agregarProfesor(ProfesorDTO profesor) throws RemoteException;
 	
 	public Set<ProfesorDTO> obtengoProfesores() throws RemoteException;
 	

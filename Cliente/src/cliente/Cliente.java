@@ -46,7 +46,7 @@ public class Cliente {
     			/*Agrego un alumno*/
     			System.out.println("\nAgrego un alumno");
     			alumno = new AlumnoDTO(11, "Claudio","Activo");
-    			manejoAlumnos.envioAlumno(alumno);
+    			manejoAlumnos.agregarAlumno(alumno);
     			/*Listo todos los alumnos con el agregado*/
     			System.out.println("\nListo Todos los Alumnos");
     			alumnos = manejoAlumnos.obtengoAlumnos();

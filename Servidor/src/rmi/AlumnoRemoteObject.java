@@ -12,7 +12,6 @@ import interfaz.TDAAlumno;
 public class AlumnoRemoteObject extends UnicastRemoteObject implements TDAAlumno {
 	
 	private static final long serialVersionUID = 1L;
-	private Set<AlumnoDTO> alumnos;
 	private AlumnoControlador controlador;
 	
 	public AlumnoRemoteObject() throws RemoteException {
@@ -22,35 +21,31 @@ public class AlumnoRemoteObject extends UnicastRemoteObject implements TDAAlumno
 		
 	}
 
-	public void envioAlumno(AlumnoDTO alumno) throws RemoteException 
-	{
-		alumnos.add(alumno);
-	}
 
-	public AlumnoDTO obtengoAlumno(int nroAlumno) throws RemoteException {
-		AlumnoDTO aux;
-		for(Iterator<AlumnoDTO> i=alumnos.iterator();i.hasNext();)
-		{
-			aux = i.next();
-			if(aux.getNumeroAlumno()==nroAlumno)
-				return aux;
-		}
-		throw new RemoteException("No encontre al alumno");
+	public AlumnoDTO obtengoAlumno(int numero) throws RemoteException {
+		return controlador.obtengoAlumno(numero);
 	}
 
 	public Set<AlumnoDTO> obtengoAlumnos() throws RemoteException 
 	{
-		return alumnos;
+		return controlador.obtengoAlumnos();
 	}
 
 	public int cantidadAlumnos() throws RemoteException {
 		// TODO Auto-generated method stub
-		return alumnos.size();
+		return controlador.cantidadAlumnos();
 	}
 
 	@Override
 	public void agregarAlumno(AlumnoDTO alumno) throws RemoteException {
 		controlador.agregarAlumno(alumno);
+	}
+
+
+	@Override
+	public void eliminarAlumno(AlumnoDTO alumno) throws RemoteException {
+		controlador.eliminarAlumno(alumno);
+		
 	}
 	
 }

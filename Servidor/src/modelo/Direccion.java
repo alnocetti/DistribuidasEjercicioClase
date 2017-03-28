@@ -24,6 +24,10 @@ public class Direccion {
 		this.departamento = departamento;
 	}
 
+	public Direccion() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getCalle() {
 		return calle;
 	}
@@ -82,6 +86,7 @@ public class Direccion {
 		direccionDTO.setPiso(this.getPiso());
 		return direccionDTO;
 	}
+	
 	
 
 }
