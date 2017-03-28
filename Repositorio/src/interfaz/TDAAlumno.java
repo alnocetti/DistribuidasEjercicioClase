@@ -19,5 +19,5 @@ public interface TDAAlumno extends Remote
 	
 	public int cantidadAlumnos() throws RemoteException;
 	
-	public void agregarAlumno() throws RemoteException;
+	public void agregarAlumno(AlumnoDTO alumno) throws RemoteException;
 }

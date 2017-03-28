@@ -15,6 +15,10 @@ public class Materia  {
 		this.nombreMateria = nombreMateria;
 	}
 
+	public Materia() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getNumeroMateria() {
 		return numeroMateria;
 	}

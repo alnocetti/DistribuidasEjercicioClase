@@ -25,10 +25,10 @@ public class Server {
     public void iniciar() {
     	try {
     		LocateRegistry.createRegistry(1099);	
-            TDAAlumno gestionAlumnos = new GestionAlumno();
-            TDACurso gestionCursos = new GestionCurso();
-            TDAMateria gestionMateria = new GestionMateria();
-            TDAProfesor gestionProfesor = new GestionProfesor();
+            TDAAlumno gestionAlumnos = new AlumnoRemoteObject();
+            TDACurso gestionCursos = new CursoRemoteObject();
+            TDAMateria gestionMateria = new MateriaRemoteObject();
+            TDAProfesor gestionProfesor = new ProfesorRemoteObject();
             Naming.rebind ("//localhost/GestionAlumnos", gestionAlumnos);
             Naming.rebind("//localhost/GestionCursos", gestionCursos);
             Naming.rebind("//localhost/GestionMateria", gestionMateria);

@@ -16,6 +16,9 @@ public class Alumno {
 		this.nombre = nombre;
 		this.estado = estado;
 	}
+	public Alumno() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getNumeroAlumno() {
 		return numeroAlumno;
 	}

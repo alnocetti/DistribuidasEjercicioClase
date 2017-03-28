@@ -8,10 +8,10 @@ import java.util.Set;
 import bean.CursoDTO;
 import interfaz.TDACurso;
 
-public class GestionCurso extends UnicastRemoteObject implements TDACurso {
+public class CursoRemoteObject extends UnicastRemoteObject implements TDACurso {
 	private Set<CursoDTO> cursos;
 	
-	public GestionCurso() throws RemoteException {
+	public CursoRemoteObject() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
 	}

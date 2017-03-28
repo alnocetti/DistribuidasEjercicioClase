@@ -9,10 +9,10 @@ import bean.MateriaDTO;
 import bean.ProfesorDTO;
 import interfaz.TDAProfesor;
 
-public class GestionProfesor extends UnicastRemoteObject implements TDAProfesor{
+public class ProfesorRemoteObject extends UnicastRemoteObject implements TDAProfesor{
 	Set<ProfesorDTO> profesores;
 
-	public GestionProfesor() throws RemoteException {
+	public ProfesorRemoteObject() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
 	}

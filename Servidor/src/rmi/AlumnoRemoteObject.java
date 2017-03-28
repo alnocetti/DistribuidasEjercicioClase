@@ -4,19 +4,23 @@ import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
 
+import controlador.AlumnoControlador;
 import bean.AlumnoDTO;
 import interfaz.TDAAlumno;
 
 
-public class GestionAlumno extends UnicastRemoteObject implements TDAAlumno {
-
-	public GestionAlumno() throws RemoteException {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
+public class AlumnoRemoteObject extends UnicastRemoteObject implements TDAAlumno {
+	
 	private static final long serialVersionUID = 1L;
 	private Set<AlumnoDTO> alumnos;
+	private AlumnoControlador controlador;
+	
+	public AlumnoRemoteObject() throws RemoteException {
+		super();
+		this.controlador = new AlumnoControlador();
+		
+		
+	}
 
 	public void envioAlumno(AlumnoDTO alumno) throws RemoteException 
 	{
@@ -45,9 +49,8 @@ public class GestionAlumno extends UnicastRemoteObject implements TDAAlumno {
 	}
 
 	@Override
-	public void agregarAlumno() throws RemoteException {
-		// TODO Auto-generated method stub
-		
+	public void agregarAlumno(AlumnoDTO alumno) throws RemoteException {
+		controlador.agregarAlumno(alumno);
 	}
 	
 }
