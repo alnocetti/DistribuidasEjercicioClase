@@ -5,12 +5,12 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Iterator;
 import java.util.Set;
 
-import bean.Materia;
-import bean.Profesor;
+import bean.MateriaDTO;
+import bean.ProfesorDTO;
 import interfaz.TDAProfesor;
 
 public class GestionProfesor extends UnicastRemoteObject implements TDAProfesor{
-	Set<Profesor> profesores;
+	Set<ProfesorDTO> profesores;
 
 	public GestionProfesor() throws RemoteException {
 		super();
@@ -23,10 +23,10 @@ public class GestionProfesor extends UnicastRemoteObject implements TDAProfesor{
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public Profesor obtengoProfesor(int numero) throws RemoteException {
+	public ProfesorDTO obtengoProfesor(int numero) throws RemoteException {
 		// TODO Auto-generated method stub
-		Profesor aux;
-		for(Iterator<Profesor> i = profesores.iterator();i.hasNext();){
+		ProfesorDTO aux;
+		for(Iterator<ProfesorDTO> i = profesores.iterator();i.hasNext();){
 			aux = i.next();
 			if(aux.getNumeroProfesor() == numero){
 				return aux;
@@ -37,13 +37,13 @@ public class GestionProfesor extends UnicastRemoteObject implements TDAProfesor{
 	}
 
 	@Override
-	public void envioProfesor(Profesor profesor) throws RemoteException {
+	public void envioProfesor(ProfesorDTO profesor) throws RemoteException {
 		// TODO Auto-generated method stub
 		profesores.add(profesor);
 		
 	}
 
-	public Set<Profesor> obtengoProfesores() throws RemoteException {
+	public Set<ProfesorDTO> obtengoProfesores() throws RemoteException {
 		// TODO Auto-generated method stub
 		return profesores;
 	}
@@ -56,20 +56,20 @@ public class GestionProfesor extends UnicastRemoteObject implements TDAProfesor{
 
 
 	@Override
-	public void AsignarMateriaProfesor(Materia materia, Profesor profesor) throws RemoteException {
+	public void AsignarMateriaProfesor(MateriaDTO materia, ProfesorDTO profesor) throws RemoteException {
 
 	}
 
 	@Override
-	public void eliminarMateriaProfesor(Materia materia, Profesor profesor) throws RemoteException {
+	public void eliminarMateriaProfesor(MateriaDTO materia, ProfesorDTO profesor) throws RemoteException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public boolean existeProfesor(int numero) {
-		Profesor aux;
-		for(Iterator<Profesor> i = profesores.iterator(); i.hasNext();){
+		ProfesorDTO aux;
+		for(Iterator<ProfesorDTO> i = profesores.iterator(); i.hasNext();){
 			aux = i.next();
 			if (aux.getNumeroProfesor() == numero){
 				return true;

@@ -5,11 +5,11 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Iterator;
 import java.util.Set;
 
-import bean.Curso;
+import bean.CursoDTO;
 import interfaz.TDACurso;
 
 public class GestionCurso extends UnicastRemoteObject implements TDACurso {
-	private Set<Curso> cursos;
+	private Set<CursoDTO> cursos;
 	
 	public GestionCurso() throws RemoteException {
 		super();
@@ -22,9 +22,9 @@ public class GestionCurso extends UnicastRemoteObject implements TDACurso {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public Curso obtengoCurso(int numero) throws RemoteException {
-		Curso aux;
-		for(Iterator<Curso> i = cursos.iterator();i.hasNext();){
+	public CursoDTO obtengoCurso(int numero) throws RemoteException {
+		CursoDTO aux;
+		for(Iterator<CursoDTO> i = cursos.iterator();i.hasNext();){
 			aux = i.next();
 			if(aux.getNumeroCurso() == numero){
 				return aux;
@@ -35,13 +35,13 @@ public class GestionCurso extends UnicastRemoteObject implements TDACurso {
 	}
 
 	@Override
-	public void envioCurso(Curso curso) throws RemoteException {
+	public void envioCurso(CursoDTO curso) throws RemoteException {
 		cursos.add(curso);
 		return;
 	}
 
 	@Override
-	public Set<Curso> obtengoCursos() throws RemoteException {
+	public Set<CursoDTO> obtengoCursos() throws RemoteException {
 		// TODO Auto-generated method stub
 		return cursos;
 	}

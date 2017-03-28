@@ -5,11 +5,11 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Iterator;
 import java.util.Set;
 
-import bean.Materia;
+import bean.MateriaDTO;
 import interfaz.TDAMateria;
 
 public class GestionMateria extends UnicastRemoteObject implements TDAMateria{
-	Set<Materia> materias;
+	Set<MateriaDTO> materias;
 
 	public GestionMateria() throws RemoteException {
 		super();
@@ -22,10 +22,10 @@ public class GestionMateria extends UnicastRemoteObject implements TDAMateria{
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public Materia obtengoMateria(int numero) throws RemoteException {
+	public MateriaDTO obtengoMateria(int numero) throws RemoteException {
 		// TODO Auto-generated method stub
-		Materia aux;
-		for(Iterator<Materia> i = materias.iterator(); i.hasNext();){
+		MateriaDTO aux;
+		for(Iterator<MateriaDTO> i = materias.iterator(); i.hasNext();){
 			aux = i.next();
 			if (aux.getNumeroMateria() == numero){
 				return aux;
@@ -36,7 +36,7 @@ public class GestionMateria extends UnicastRemoteObject implements TDAMateria{
 	}
 
 	@Override
-	public void envioMateria(Materia materia) {
+	public void envioMateria(MateriaDTO materia) {
 		// TODO Auto-generated method stub
 		materias.add(materia);
 		return;
@@ -44,7 +44,7 @@ public class GestionMateria extends UnicastRemoteObject implements TDAMateria{
 	}
 
 	@Override
-	public Set<Materia> obtengoMaterias() {
+	public Set<MateriaDTO> obtengoMaterias() {
 		// TODO Auto-generated method stub
 		return materias;
 	}
@@ -58,8 +58,8 @@ public class GestionMateria extends UnicastRemoteObject implements TDAMateria{
 	@Override
 	public boolean existeMateria(int numero) throws RemoteException {
 		// TODO Auto-generated method stub
-		Materia aux;
-		for(Iterator<Materia> i = materias.iterator(); i.hasNext();){
+		MateriaDTO aux;
+		for(Iterator<MateriaDTO> i = materias.iterator(); i.hasNext();){
 			aux = i.next();
 			if(aux.getNumeroMateria() == numero)
 				return true;

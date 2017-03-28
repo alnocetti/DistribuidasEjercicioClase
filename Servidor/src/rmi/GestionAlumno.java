@@ -4,7 +4,7 @@ import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
 
-import bean.Alumno;
+import bean.AlumnoDTO;
 import interfaz.TDAAlumno;
 
 
@@ -16,16 +16,16 @@ public class GestionAlumno extends UnicastRemoteObject implements TDAAlumno {
 	}
 
 	private static final long serialVersionUID = 1L;
-	private Set<Alumno> alumnos;
+	private Set<AlumnoDTO> alumnos;
 
-	public void envioAlumno(Alumno alumno) throws RemoteException 
+	public void envioAlumno(AlumnoDTO alumno) throws RemoteException 
 	{
 		alumnos.add(alumno);
 	}
 
-	public Alumno obtengoAlumno(int nroAlumno) throws RemoteException {
-		Alumno aux;
-		for(Iterator<Alumno> i=alumnos.iterator();i.hasNext();)
+	public AlumnoDTO obtengoAlumno(int nroAlumno) throws RemoteException {
+		AlumnoDTO aux;
+		for(Iterator<AlumnoDTO> i=alumnos.iterator();i.hasNext();)
 		{
 			aux = i.next();
 			if(aux.getNumeroAlumno()==nroAlumno)
@@ -34,7 +34,7 @@ public class GestionAlumno extends UnicastRemoteObject implements TDAAlumno {
 		throw new RemoteException("No encontre al alumno");
 	}
 
-	public Set<Alumno> obtengoAlumnos() throws RemoteException 
+	public Set<AlumnoDTO> obtengoAlumnos() throws RemoteException 
 	{
 		return alumnos;
 	}
@@ -43,4 +43,11 @@ public class GestionAlumno extends UnicastRemoteObject implements TDAAlumno {
 		// TODO Auto-generated method stub
 		return alumnos.size();
 	}
+
+	@Override
+	public void agregarAlumno() throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
