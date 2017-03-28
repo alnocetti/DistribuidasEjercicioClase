@@ -26,6 +26,10 @@ public class Curso {
 		this.cantidadMaxima = cantidadMaxima;
 	}
 
+	public Curso() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getNumeroCurso() {
 		return numeroCurso;
 	}
@@ -86,6 +90,17 @@ public class Curso {
 		cursoDTO.setProfesor(this.getProfesor().toDTO());
 		
 		return cursoDTO;
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof Curso){
+			Curso aux = (Curso)obj;	
+			if(this.getNumeroCurso() == aux.getNumeroCurso())
+				return true;
+		}
+		return false;
+	
 	}
 
 	

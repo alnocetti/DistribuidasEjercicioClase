@@ -43,6 +43,17 @@ public class Alumno {
 				+ "]";
 	}
 	
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof Alumno){
+			Alumno aux = (Alumno)obj;	
+			if(this.getNumeroAlumno() == aux.getNumeroAlumno())
+				return true;
+		}
+		return false;
+	
+	}
+	
 	public AlumnoDTO toDTO() throws RemoteException {
 		AlumnoDTO alumnoDTO = new AlumnoDTO();
 		alumnoDTO.setNombre(this.getNombre());

@@ -6,13 +6,16 @@ import java.util.Iterator;
 import java.util.Set;
 
 import bean.CursoDTO;
+import controlador.CursoControlador;
 import interfaz.TDACurso;
 
 public class CursoRemoteObject extends UnicastRemoteObject implements TDACurso {
 	private Set<CursoDTO> cursos;
+	private CursoControlador controlador;
 	
 	public CursoRemoteObject() throws RemoteException {
 		super();
+		this.controlador = new CursoControlador();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -23,33 +26,30 @@ public class CursoRemoteObject extends UnicastRemoteObject implements TDACurso {
 
 	@Override
 	public CursoDTO obtengoCurso(int numero) throws RemoteException {
-		CursoDTO aux;
-		for(Iterator<CursoDTO> i = cursos.iterator();i.hasNext();){
-			aux = i.next();
-			if(aux.getNumeroCurso() == numero){
-				return aux;
-			}
-			throw  new RemoteException ("No se encontró el curso");
-		}
-		return null;
+		return controlador.obtengoCurso(numero);
 	}
 
 	@Override
-	public void envioCurso(CursoDTO curso) throws RemoteException {
-		cursos.add(curso);
+	public void agregarCurso(CursoDTO cursoDTO) throws RemoteException {
+		controlador.agregarCurso(cursoDTO);
 		return;
 	}
 
 	@Override
 	public Set<CursoDTO> obtengoCursos() throws RemoteException {
 		// TODO Auto-generated method stub
-		return cursos;
+		return controlador.obtengoCursos();
 	}
 
 	@Override
 	public int cantidadCursos() throws RemoteException {
 		// TODO Auto-generated method stub
-		return cursos.size();
+		return controlador.cantidadCursos();
+	}
+
+	@Override
+	public void eliminarCurso(CursoDTO cursoDTO) throws RemoteException {
+		controlador.eliminarCurso(cursoDTO);
 	}
 
 }
