@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class Alumno implements Serializable{
+public class AlumnoDTO implements Serializable{
 	
 	/**
 	 * 
@@ -11,10 +11,14 @@ public class Alumno implements Serializable{
 	private int numeroAlumno;
 	private String nombre;
 	private String estado;
-	public Alumno(int numeroAlumno, String nombre, String estado) {
+	public AlumnoDTO(int numeroAlumno, String nombre, String estado) {
 		this.numeroAlumno = numeroAlumno;
 		this.nombre = nombre;
 		this.estado = estado;
+	}
+	
+	public AlumnoDTO(){
+		
 	}
 	public int getNumeroAlumno() {
 		return numeroAlumno;
@@ -39,5 +43,6 @@ public class Alumno implements Serializable{
 		return "Alumno [nombre=" + nombre + ", numeroAlumno=" + numeroAlumno
 				+ "]";
 	}
+	
 	
 }

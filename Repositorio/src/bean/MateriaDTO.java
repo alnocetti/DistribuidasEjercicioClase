@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class Materia implements Serializable {
+public class MateriaDTO implements Serializable {
 	
 	/**
 	 * 
@@ -11,10 +11,13 @@ public class Materia implements Serializable {
 	private int numeroMateria;
 	private String nombreMateria;
 	
-	public Materia(int numeroMateria, String nombreMateria) {
+	public MateriaDTO(int numeroMateria, String nombreMateria) {
 		super();
 		this.numeroMateria = numeroMateria;
 		this.nombreMateria = nombreMateria;
+	}
+	
+	public MateriaDTO(){
 	}
 
 	public int getNumeroMateria() {

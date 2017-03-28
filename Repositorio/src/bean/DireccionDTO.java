@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class Direccion implements Serializable{
+public class DireccionDTO implements Serializable{
 	
 	/**
 	 * 
@@ -16,7 +16,7 @@ public class Direccion implements Serializable{
 	private int piso;
 	private String departamento;
 	
-	public Direccion(String calle, int numeroDireccion, String codigoPostal, String localidad, int piso,
+	public DireccionDTO(String calle, int numeroDireccion, String codigoPostal, String localidad, int piso,
 			String departamento) {
 		super();
 		this.calle = calle;
@@ -25,6 +25,10 @@ public class Direccion implements Serializable{
 		this.localidad = localidad;
 		this.piso = piso;
 		this.departamento = departamento;
+	}
+	
+	public DireccionDTO(){
+		
 	}
 
 	public String getCalle() {
@@ -78,6 +82,7 @@ public class Direccion implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
 	
 	
 

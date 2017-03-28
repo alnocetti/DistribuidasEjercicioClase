@@ -3,7 +3,7 @@ package bean;
 import java.io.Serializable;
 import java.util.Set;
 
-public class Curso implements Serializable {
+public class CursoDTO implements Serializable {
 
 	/**
 	 * 
@@ -11,18 +11,22 @@ public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int numeroCurso;
-	private Materia materia;
-	private Profesor profesor;
-	private Set<Alumno> alumnos;
+	private MateriaDTO materia;
+	private ProfesorDTO profesor;
+	private Set<AlumnoDTO> alumnos;
 	private int cantidadMaxima;
 	
-	public Curso(int numeroCurso, Materia materia, Profesor profesor, Set<Alumno> alumnos, int cantidadMaxima) {
+	public CursoDTO(int numeroCurso, MateriaDTO materia, ProfesorDTO profesor, Set<AlumnoDTO> alumnos, int cantidadMaxima) {
 		super();
 		this.numeroCurso = numeroCurso;
 		this.materia = materia;
 		this.profesor = profesor;
 		this.alumnos = alumnos;
 		this.cantidadMaxima = cantidadMaxima;
+	}
+	
+	public CursoDTO(){
+		
 	}
 
 	public int getNumeroCurso() {
@@ -33,27 +37,27 @@ public class Curso implements Serializable {
 		this.numeroCurso = numeroCurso;
 	}
 
-	public Materia getMateria() {
+	public MateriaDTO getMateria() {
 		return materia;
 	}
 
-	public void setMateria(Materia materia) {
+	public void setMateria(MateriaDTO materia) {
 		this.materia = materia;
 	}
 
-	public Profesor getProfesor() {
+	public ProfesorDTO getProfesor() {
 		return profesor;
 	}
 
-	public void setProfesor(Profesor profesor) {
+	public void setProfesor(ProfesorDTO profesor) {
 		this.profesor = profesor;
 	}
 
-	public Set<Alumno> getAlumnos() {
+	public Set<AlumnoDTO> getAlumnos() {
 		return alumnos;
 	}
 
-	public void setAlumnos(Set<Alumno> alumnos) {
+	public void setAlumnos(Set<AlumnoDTO> alumnos) {
 		this.alumnos = alumnos;
 	}
 

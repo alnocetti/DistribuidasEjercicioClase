@@ -3,7 +3,7 @@ package bean;
 import java.io.Serializable;
 import java.util.Set;
 
-public class Profesor implements Serializable{
+public class ProfesorDTO implements Serializable{
 	//Comenntario prueba commit
 	
 	/**
@@ -13,15 +13,17 @@ public class Profesor implements Serializable{
 	
 	private int numeroProfesor;
 	private String nombreProfesor;
-	private Set<Materia> materias;
-	private Direccion direccion;
+	private Set<MateriaDTO> materias;
+	private DireccionDTO direccion;
 	
-	public Profesor(int numeroProfesor, String nombreProfesor, Set<Materia> materias, Direccion direccion) {
+	public ProfesorDTO(int numeroProfesor, String nombreProfesor, Set<MateriaDTO> materias, DireccionDTO direccion) {
 		super();
 		this.numeroProfesor = numeroProfesor;
 		this.nombreProfesor = nombreProfesor;
 		this.materias = materias;
 		this.direccion = direccion;
+	}
+	public ProfesorDTO(){
 	}
 
 	public int getNumeroProfesor() {
@@ -40,24 +42,20 @@ public class Profesor implements Serializable{
 		this.nombreProfesor = nombreProfesor;
 	}
 
-	public Set<Materia> getMaterias() {
+	public Set<MateriaDTO> getMaterias() {
 		return materias;
 	}
 
-	public void setMaterias(Set<Materia> materias) {
+	public void setMaterias(Set<MateriaDTO> materias) {
 		this.materias = materias;
 	}
 
-	public Direccion getDireccion() {
+	public DireccionDTO getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(Direccion direccion) {
+	public void setDireccion(DireccionDTO direccion) {
 		this.direccion = direccion;
 	}
-	
-	
-	
-	
 
 }
